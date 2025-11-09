@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 10000;
 const allowedOrigins = [
   "http://localhost:3000",
   "https://nightquill-frontend.vercel.app",
+  "https://nightquill-frontend-kof2yjkkc-neils-projects-802e8227.vercel.app/"
 ];
 
 app.use(
@@ -20,7 +21,8 @@ app.use(
         callback(new Error("Not allowed by CORS"));
       }
     },
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
   })
 );
